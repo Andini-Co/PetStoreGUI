@@ -28,7 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 //main class
-public class VendingMachineGUI extends JFrame {
+public class PetStoreGUI extends JFrame {
     private ArrayList<String> products = new ArrayList<>(
             Arrays.asList("Suki Liar", "kungfu panda", "Hamster", "Kelinci", "Burung Hantu",
                     "Suki Liar", "Tupai", "Ular", "Kumbang", "Lebah Ganteng",
@@ -43,7 +43,7 @@ public class VendingMachineGUI extends JFrame {
     private JButton adminButton;
 
     // konstruktor
-    public VendingMachineGUI() {
+    public PetStoreGUI() {
         setTitle("Pet Store");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 830);
@@ -231,7 +231,7 @@ public class VendingMachineGUI extends JFrame {
 
         if (result == JOptionPane.OK_OPTION) {
             String password = new String(passwordField.getPassword());
-            if (password.equals("240306")) {
+            if (password.equals("suki")) {
                 showMaintenanceMenu();
             } else {
                 JOptionPane.showMessageDialog(this, "Password Salah!",
@@ -324,7 +324,7 @@ public class VendingMachineGUI extends JFrame {
                 stok.add(stock);
                 productImages.add(productImages.isEmpty() ? new ImageIcon() : productImages.get(0));
                 updateProductCards();
-                JOptionPane.showMessageDialog(this, "Produk baru berhasil ditambahkan!");
+                JOptionPane.showMessageDialog(this, "Produk baru berhasil ditambahan!");
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Masukkan angka yang valid untuk harga dan stok!");
             }
@@ -366,7 +366,7 @@ public class VendingMachineGUI extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            VendingMachineGUI VM = new VendingMachineGUI();
+            PetStoreGUI VM = new PetStoreGUI();
             VM.setVisible(true);
         });
     }
